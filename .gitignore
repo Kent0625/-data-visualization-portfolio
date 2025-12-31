@@ -14,7 +14,7 @@
 
 # Output files from R Markdown
 *.html
-*.pdf
+
 # Keep the specific PDF if it is a final artifact, but usually generated files are ignored.
 # Since Group-4-Portfolio-3.pdf seems to be a deliverable, I won't ignore *.pdf globally unless requested.
 # For now, I will keep it simple.
