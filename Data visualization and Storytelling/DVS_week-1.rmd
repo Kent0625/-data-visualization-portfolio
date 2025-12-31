@@ -1,0 +1,144 @@
+---
+title: "DVS: Human Portrait Typography"
+output: pdf_document
+date: "2025-01-27"
+---
+
+Group members: Alasan, Macalam, Mallari, Tion, Velez
+
+```{r}
+install.packages("pdftools")
+```
+
+```{r}
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+```
+
+```{r}
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Group members: Alasan, Macalam, Mallari, Tion, Velez
+
+## **Objective**
+
+This activity is designed to help you apply the principles of **simplicity, clarity, and integrity** to create meaningful and impactful data visualizations. You will process text data from any document using R, generate a **word cloud** as an objective and visual representation of the text, and creatively adapt the word cloud into a **Human Portrait Typography** (Text Portrait Typography) that resonates with the theme USTP *Humans of Computing*.
+
+------------------------------------------------------------------------
+
+### **Step 1: Data Processing and Word Cloud Creation**
+
+1.  **Install Required Libraries**:
+    -   Install the following R libraries if they are not already available:
+
+```{r}
+install.packages("rmarkdown")
+install.packages("knitr")
+install.packages("pdftools")
+install.packages("tm")
+install.packages("wordcloud")
+install.packages("RColorBrewer")
+install.packages("textstem")
+```
+
+2.  **Extract Text from the PDF**:
+
+    -   Use the `pdftools` package to extract text from the provided PDF document.
+
+    ```{r, warning=FALSE}
+        library(pdftools)
+        pdf_path <- "C:/Users/User/Downloads/layout (1).pdf"
+        pdf_text <- pdf_text(pdf_path)
+        full_text <- paste(pdf_text, collapse = " ")
+    ```
+
+3.  **Preprocess the Text**:
+
+    -   Clean the text data using the `tm` package to ensure clarity and relevance.
+
+    ```{r, warning=FALSE}
+        library(tm)
+      
+      corpus <- Corpus(VectorSource(full_text)) # Create a text corpus
+      
+      # Text preprocessing
+      corpus <- tm_map(corpus, content_transformer(tolower))  # Convert to lowercase
+      
+      corpus <- tm_map(corpus, removePunctuation)            # Remove punctuation
+      
+      corpus <- tm_map(corpus, removeNumbers)                # Remove numbers
+      
+      corpus <- tm_map(corpus, content_transformer(lemmatize_strings))
+      
+      corpus <- tm_map(corpus, content_transformer(function(x) { # Keep only words longer than 3 characters
+        words <- unlist(strsplit(x, " "))
+        words <- words[nchar(words) > 4]
+        paste(words, collapse = " ")
+      }))
+      
+      corpus <- tm_map(corpus, removeWords, stopwords("en")) # Remove stopwords
+      
+      # Removing words that does not add value
+      corpus <- tm_map(corpus, removeWords, c("negative", "original", "point", 
+                                              "fscore", "score", "imbalanced","class", "philippines", 
+                                              "subject", "usage", "input", "quickly", "include", 
+                                              "output", "another"))
+      
+      corpus <- tm_map(corpus, stripWhitespace)              # Remove extra whitespace
+    ```
+
+    ------------------------------------------------------------------------
+
+    #### PROCESSED TEXT:
+
+    ✅ Remove stopwords for better control. ✅ Lemmatize words to group similar meanings. ✅ Remove punctuations and words that do not add value. ✅ Filter by frequency to remove overly common words.
+
+4.  **Generate the Word Cloud**:
+
+    -   Create the word cloud using the `wordcloud` package.
+
+    ```{r, warning=FALSE}
+      library(wordcloud)
+      library(RColorBrewer)
+      
+      # Create a Term-Document Matrix
+      tdm <- TermDocumentMatrix(corpus)
+      tdm_matrix <- as.matrix(tdm)
+      
+      # Calculate word frequencies
+      word_freq <- sort(rowSums(tdm_matrix), decreasing = TRUE)
+      
+      # Set background color black
+      par(bg="white")
+      
+      # Generate the word cloud
+      #png("wordcloud3.png", width = 3507, height = 4961, res=1080, bg='white')
+      set.seed(300)
+      wordcloud(
+        words = names(word_freq),
+        freq = word_freq,
+        min.freq = 2,
+        max.words = 200,
+        random.order = FALSE,
+        colors = "black",
+        family = "Impact" # Use a fixed-width font
+      )
+    ```
+
+    ------------------------------------------------------------------------
+
+### **Step 2: Human Portrait Typography**
+
+1.  **Choose a Portrait**:
+    -   Select a high-resolution image of a person related to the theme *Humans of Computing*.
+2.  **Overlay the Word Cloud**:
+    -   Use design tools such as Adobe Illustrator, Photoshop, or GIMP to overlay the word cloud onto the portrait.
+3.  **Typography Refinement**:
+    -   Adjust font size, word placement, and colors to ensure the typography maintains **clarity** while creatively representing the portrait.
+
+![Jhun Brian portrait Typography](C:/Users/User/Downloads/Photoshop/TYPOGRAPHY.png) Design tool used: **Photoshop**
