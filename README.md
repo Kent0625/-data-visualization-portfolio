@@ -1,25 +1,36 @@
 # Data Visualization and Storytelling Portfolio
 
-Welcome to my Data Visualization and Storytelling portfolio. This repository contains a collection of projects demonstrating my skills in data analysis, visual storytelling, and infographic design.
+This repository hosts a collection of academic and personal projects demonstrating proficiency in data analysis, visual storytelling, and statistical computing. It serves as a comprehensive demonstration of skills in transforming complex datasets into actionable insights and compelling visual narratives.
 
-## 📂 Project Overview
+## Portfolio Overview
 
-This portfolio showcases various techniques in transforming raw data into compelling visual narratives. It includes work with statistical analysis, geospatial mapping, and creative design.
+The projects herein showcase advanced techniques in statistical analysis, geospatial mapping, and information design. This work highlights the ability to communicate data-driven stories effectively to diverse audiences.
 
-### Key Highlights
+### Key Projects and Competencies
 
-*   **Active Volcanoes in the Philippines:** An analysis of volcanic data, likely visualizing locations, activity levels, or historical eruptions.
-*   **3D Choropleth Population Map:** A 3D geospatial visualization representing population density or distribution.
-*   **Human Portrait Typography:** A creative blend of text and imagery to convey a human-centric story.
-*   **Data Driven Infographics:** Visual summaries of complex datasets designed for clarity and impact.
+*   **Geospatial Analysis: Active Volcanoes in the Philippines**
+    *   Conducted spatial analysis of volcanic data to map activity levels and historical eruption patterns.
+    *   Demonstrated proficiency in handling geospatial datasets and visualizing risk zones.
 
-## 🛠️ Tools & Technologies
+*   **Advanced Mapping: 3D Choropleth Population Map**
+    *   Developed a 3D geospatial visualization to represent population density distributions.
+    *   Utilized advanced rendering techniques to enhance the interpretability of demographic data.
 
-*   **R & RMarkdown:** Used for statistical computing and reproducible reporting (`.rmd`).
-*   **Data formats:** CSV, ZIP archives.
-*   **Visualization Types:** Choropleth maps, Typography art, Infographics.
+*   **Creative Data Visualization: Human Portrait Typography**
+    *   Created an artistic synthesis of text and imagery to explore human-centric narratives through data.
+    *   Showcases design thinking and the ability to merge aesthetics with information.
 
-## 📁 Repository Structure
+*   **Information Design: Data Driven Infographics**
+    *   Designed comprehensive visual summaries of complex datasets.
+    *   Focused on clarity, hierarchy, and impact to facilitate rapid information consumption.
+
+## Technical Skills
+
+*   **Statistical Computing:** R, RMarkdown (Reproducible Research)
+*   **Data Management:** CSV handling, Data Cleaning, Structural Organization
+*   **Visualization Techniques:** Choropleth Mapping, Geospatial Analysis, Infographic Design, 3D Rendering
+
+## Repository Structure
 
 ```text
 .
@@ -36,9 +47,9 @@ This portfolio showcases various techniques in transforming raw data into compel
 └── README.md
 ```
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
-*Created by Kent John U. Macalam - Expert in Data Visualization and Storytelling.*
+*Portfolio of Kent John U. Macalam*
