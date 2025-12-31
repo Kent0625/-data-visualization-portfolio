@@ -41,4 +41,4 @@ This portfolio showcases various techniques in transforming raw data into compel
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-*Created to demonstrate expertise in Data Visualization and Storytelling.*
+*Created by Kent John U. Macalam - Expert in Data Visualization and Storytelling.*
